@@ -10,7 +10,7 @@ import {
 import { styles } from "./styles";
 import { useSearch } from "@/hooks/useSearch";
 import { useDispatch } from "react-redux";
-import { setSearchResults } from "@/store/searchSlice";
+import { setSearchResults, eraseSearchResults } from "@/store/searchSlice";
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -31,6 +31,10 @@ export const Input = () => {
   const onSearch = () => {
     trigger(inputValue);
   };
+  const onClear = () => {
+    dispatch(eraseSearchResults());
+    setInputValue("");
+  };
   return (
     <View>
       <TextInput
@@ -41,6 +45,9 @@ export const Input = () => {
       />
       <Pressable onPress={onSearch}>
         <Text>Search</Text>
+      </Pressable>
+      <Pressable onPress={onClear}>
+        <Text>Clear</Text>
       </Pressable>
     </View>
   );
