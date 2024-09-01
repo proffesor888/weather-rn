@@ -3,9 +3,9 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { ICurrent, ILocation, SearchState } from "./types";
 
 const initialSearchState: SearchState = {
-  location: {},
-  current: {},
-  forecast: {},
+  location: undefined,
+  current: undefined,
+  forecast: undefined,
 };
 
 export const searchSlice = createSlice({

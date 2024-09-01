@@ -42,8 +42,8 @@ export interface IForecastDay {
 }
 
 export interface SearchState {
-  location: ILocation | {};
-  current: ICurrent | {};
+  location?: ILocation;
+  current?: ICurrent;
   forecast?: IForecast;
 }
 

@@ -10,10 +10,7 @@ export const Weather = () => {
   const forecast = useSelector((state) =>
     getForecastForHours(state, PRESELECTED_HOURS_AMOUNT)
   );
-  console.warn(forecast);
-  const hasCurrentData = Object.keys(current).length;
-  const hasLocationData = Object.keys(location).length;
-  if (!hasCurrentData || !hasLocationData) return null;
+  if (!current || !location) return null;
   return (
     <View>
       <ThemedText>{`City: ${location.name}`}</ThemedText>
