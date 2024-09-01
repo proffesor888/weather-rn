@@ -29,6 +29,7 @@ export interface ICurrent {
   cloud: number;
   feelslike_c: number;
   uv: number;
+  time_epoch: number;
 }
 
 export interface IForecast {

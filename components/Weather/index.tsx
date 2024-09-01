@@ -1,7 +1,8 @@
 import { getForecastForHours, getWeatherData } from "@/store/selectors";
-import { View, Image } from "react-native";
+import { View } from "react-native";
 import { useSelector } from "react-redux";
 import { ThemedText } from "../ThemedText";
+import { WeatherDetails } from "./WeatherDetails";
 
 const PRESELECTED_HOURS_AMOUNT = 5;
 
@@ -13,17 +14,16 @@ export const Weather = () => {
   if (!current || !location) return null;
   return (
     <View>
-      <ThemedText>{`City: ${location.name}`}</ThemedText>
-      <ThemedText>{`Country: ${location.country}`}</ThemedText>
-      <ThemedText>{`Current temperature: ${current.temp_c} C`}</ThemedText>
-      <ThemedText>Conditions:</ThemedText>
-      <ThemedText>
-        {`${current.condition.text}`}
-        <Image
-          style={{ width: 50, height: 50 }}
-          source={{ uri: current.condition.icon }}
-        />
-      </ThemedText>
+      <WeatherDetails current={current} location={location} />
+      <ThemedText>{`Forecast for next ${PRESELECTED_HOURS_AMOUNT} hours:`}</ThemedText>
+      {forecast.map((forecastPerHour) => {
+        return (
+          <WeatherDetails
+            key={forecastPerHour.time_epoch}
+            current={forecastPerHour}
+          />
+        );
+      })}
     </View>
   );
 };
