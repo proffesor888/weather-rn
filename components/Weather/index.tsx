@@ -1,11 +1,16 @@
-import { getForecastForDays, getWeatherData } from "@/store/selectors";
+import { getForecastForHours, getWeatherData } from "@/store/selectors";
 import { View, Image } from "react-native";
 import { useSelector } from "react-redux";
 import { ThemedText } from "../ThemedText";
 
+const PRESELECTED_HOURS_AMOUNT = 5;
+
 export const Weather = () => {
   const { current, location } = useSelector(getWeatherData);
-  const forecast = useSelector((state) => getForecastForDays(state, 5));
+  const forecast = useSelector((state) =>
+    getForecastForHours(state, PRESELECTED_HOURS_AMOUNT)
+  );
+  console.warn(forecast);
   const hasCurrentData = Object.keys(current).length;
   const hasLocationData = Object.keys(location).length;
   if (!hasCurrentData || !hasLocationData) return null;

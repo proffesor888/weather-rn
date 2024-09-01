@@ -7,12 +7,28 @@ export const getWeatherData = createSelector(
   [getSearchState],
   (searchState) => searchState
 );
-export const getForecastForDays = createSelector(
+export const getForecastForHours = createSelector(
   [getSearchState, (_, hoursAmount: number) => hoursAmount],
   (searchState, hoursAmount) => {
-    if(searchState.forecast?.forecastday) {
-        const availableDay = searchState.forecast.forecastday[0];
-        return getForecaseForSelectedDays(availableDay.hour, hoursAmount);
+    let forecast = [];
+    if (searchState.forecast?.forecastday) {
+      const firstDay = searchState.forecast.forecastday[0];
+      forecast = getForecaseForSelectedDays({
+        totalHours: firstDay.hour,
+        hoursAmount,
+      });
+      if (forecast.length < hoursAmount) {
+        const hoursDifference = hoursAmount - forecast.length;
+        const secondDay = searchState.forecast.forecastday[1];
+        return forecast.concat(
+          getForecaseForSelectedDays({
+            totalHours: secondDay.hour,
+            hoursAmount: hoursDifference,
+            fromStart: true,
+          })
+        );
+      }
+      return forecast;
     }
     return [];
   }

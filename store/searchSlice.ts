@@ -5,7 +5,7 @@ import { ICurrent, ILocation, SearchState } from "./types";
 const initialSearchState: SearchState = {
   location: {},
   current: {},
-  forecast: [],
+  forecast: {},
 };
 
 export const searchSlice = createSlice({
