@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import { ThemedText } from "../common/ThemedText";
 import { WeatherDetails } from "./WeatherDetails";
 import { ThemedView } from "../common/ThemedView";
-
-const PRESELECTED_HOURS_AMOUNT = 5;
+import { PRESELECTED_HOURS_AMOUNT } from "@/constants";
 
 export const Weather = () => {
   const { current, location } = useSelector(getWeatherData);
