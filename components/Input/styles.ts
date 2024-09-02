@@ -1,3 +1,4 @@
+import { MAIN_LIGHT_COLOR } from "@/constants";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -9,8 +10,8 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 20,
-    borderColor: "#ccc8c8",
-    color: "#ccc8c8",
+    borderColor: MAIN_LIGHT_COLOR,
+    color: MAIN_LIGHT_COLOR,
     fontWeight: 'bold',
     fontSize: 25,
     fontStyle: "italic"

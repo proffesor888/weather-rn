@@ -16,6 +16,7 @@ import {
 import { ThemedView } from "../common/ThemedView";
 import { ThemedText } from "../common/ThemedText";
 import { getSearchError } from "@/store/selectors";
+import { ERROR_COLOR, MAIN_LIGHT_COLOR } from "@/constants";
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -56,19 +57,19 @@ export const Input = () => {
       />
       <ThemedView style={styles.buttonsContainer}>
         <Pressable style={styles.button} onPress={onSearch}>
-          <ThemedText lightColor="#ccc8c8" type="subtitle">
+          <ThemedText lightColor={MAIN_LIGHT_COLOR} type="subtitle">
             Search
           </ThemedText>
         </Pressable>
         <Pressable style={styles.button} onPress={onClear}>
-          <ThemedText lightColor="#ccc8c8" type="subtitle">
+          <ThemedText lightColor={MAIN_LIGHT_COLOR} type="subtitle">
             Clear search
           </ThemedText>
         </Pressable>
       </ThemedView>
       <ThemedView style={styles.errorContainer}>
         {hasError && (
-          <ThemedText type="subtitle" lightColor="#ff0000">
+          <ThemedText type="subtitle" lightColor={ERROR_COLOR}>
             {data.error.message}
           </ThemedText>
         )}

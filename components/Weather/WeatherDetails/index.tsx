@@ -3,6 +3,7 @@ import { ThemedView } from "@/components/common/ThemedView";
 import { ICurrent, ILocation } from "@/store/types";
 import { Image } from "react-native";
 import { styles } from "./styles";
+import { MAIN_LIGHT_COLOR, SECONDARY_HIGHLIGHT_COLOR } from "@/constants";
 
 export const WeatherDetails = ({
   location,
@@ -18,28 +19,28 @@ export const WeatherDetails = ({
     <ThemedView style={styles.textContainer}>
       {showHours && hour && (
         <ThemedText
-          lightColor="#1bb835"
+          lightColor={SECONDARY_HIGHLIGHT_COLOR}
           type="title"
         >{`${hour} : `}</ThemedText>
       )}
       {location && (
         <ThemedText
           type="subtitle"
-          lightColor="#ccc8c8"
+          lightColor={MAIN_LIGHT_COLOR}
         >{`City: ${location.name}`}</ThemedText>
       )}
       {location && (
         <ThemedText
           type="subtitle"
-          lightColor="#ccc8c8"
+          lightColor={MAIN_LIGHT_COLOR}
         >{`Country: ${location.country}`}</ThemedText>
       )}
       <ThemedText
         type="subtitle"
-        lightColor="#ccc8c8"
+        lightColor={MAIN_LIGHT_COLOR}
       >{`Current temperature: ${current.temp_c} C`}</ThemedText>
       <ThemedView style={styles.conditionsContainer}>
-        <ThemedText type="subtitle" lightColor="#ccc8c8">
+        <ThemedText type="subtitle" lightColor={MAIN_LIGHT_COLOR}>
           {`${current.condition.text}`}
         </ThemedText>
         <Image

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { ThemedText } from "../common/ThemedText";
 import { WeatherDetails } from "./WeatherDetails";
 import { ThemedView } from "../common/ThemedView";
-import { PRESELECTED_HOURS_AMOUNT } from "@/constants";
+import { HIGHLIGHT_COLOR, PRESELECTED_HOURS_AMOUNT } from "@/constants";
 
 export const Weather = () => {
   const { current, location } = useSelector(getWeatherData);
@@ -13,12 +13,12 @@ export const Weather = () => {
   if (!current || !location) return null;
   return (
     <ThemedView>
-      <ThemedText lightColor="#c32f0f" type="title">
+      <ThemedText lightColor={HIGHLIGHT_COLOR} type="title">
         Current weather:
       </ThemedText>
       <WeatherDetails current={current} location={location} />
       <ThemedText
-        lightColor="#c32f0f"
+        lightColor={HIGHLIGHT_COLOR}
         type="title"
       >{`Forecast for next ${PRESELECTED_HOURS_AMOUNT} hours:`}</ThemedText>
       {forecast.map((forecastPerHour) => {
