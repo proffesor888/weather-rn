@@ -7,6 +7,9 @@ export const getWeatherData = createSelector(
   [getSearchState],
   (searchState) => searchState
 );
+export const getSearchError = createSelector(getSearchState, (state) => {
+  return state.error;
+})
 export const getForecastForHours = createSelector(
   [getSearchState, (_, hoursAmount: number) => hoursAmount],
   (searchState, hoursAmount) => {

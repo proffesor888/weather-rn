@@ -11,6 +11,7 @@ export interface ILocation {
 export interface ICurrent {
   last_updated_epoch: string;
   last_updated: string;
+  time: string;
   temp_c: number;
   temp_f: number;
   is_day: number;
@@ -46,6 +47,7 @@ export interface SearchState {
   location?: ILocation;
   current?: ICurrent;
   forecast?: IForecast;
+  error?: unknown;
 }
 
 export interface RootState {

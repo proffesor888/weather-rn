@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
-    outlineStyle: "none",
     height: 50,
     borderRadius: 25,
     marginBottom: 32,
@@ -27,5 +26,10 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
+  },
+  errorContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10
   }
 });

@@ -6,6 +6,7 @@ const initialSearchState: SearchState = {
   location: undefined,
   current: undefined,
   forecast: undefined,
+  error: undefined
 };
 
 export const searchSlice = createSlice({
@@ -26,9 +27,15 @@ export const searchSlice = createSlice({
         ...initialSearchState,
       };
     },
+    setError: (state: SearchState, action: PayloadAction<{error: unknown}>) => {
+      return {
+        ...state,
+        error: action.payload
+      }
+    }
   },
 });
 
-export const { setSearchResults, eraseSearchResults } = searchSlice.actions;
+export const { setSearchResults, eraseSearchResults, setError } = searchSlice.actions;
 
 export default searchSlice.reducer;

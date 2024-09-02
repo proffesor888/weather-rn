@@ -9,19 +9,30 @@ import {
 } from "react-native";
 import { styles } from "./styles";
 import { useSearch } from "@/hooks/useSearch";
-import { useDispatch } from "react-redux";
-import { setSearchResults, eraseSearchResults } from "@/store/searchSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setSearchResults,
+  eraseSearchResults,
+  setError,
+} from "@/store/searchSlice";
 import { ThemedView } from "../ThemedView";
 import { ThemedText } from "../ThemedText";
+import { getSearchError } from "@/store/selectors";
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const { data, trigger } = useSearch();
   const dispatch = useDispatch();
+  const errorFromState = useSelector(getSearchError);
+  const hasError = data?.error && errorFromState;
 
   useEffect(() => {
     if (data?.location && data?.current) {
       dispatch(setSearchResults(data));
+    }
+    if(data?.error) {
+      dispatch(eraseSearchResults());
+      dispatch(setError(data.error.message));
     }
   }, [data]);
 
@@ -45,14 +56,25 @@ export const Input = () => {
         placeholder="Please, enter city name"
         style={styles.input}
       />
-      <View style={styles.buttonsContainer}>
+      <ThemedView style={styles.buttonsContainer}>
         <Pressable style={styles.button} onPress={onSearch}>
-          <ThemedText lightColor="#ccc8c8" type="subtitle">Search</ThemedText>
+          <ThemedText lightColor="#ccc8c8" type="subtitle">
+            Search
+          </ThemedText>
         </Pressable>
         <Pressable style={styles.button} onPress={onClear}>
-          <ThemedText lightColor="#ccc8c8" type="subtitle">Clear search</ThemedText>
+          <ThemedText lightColor="#ccc8c8" type="subtitle">
+            Clear search
+          </ThemedText>
         </Pressable>
-      </View>
+      </ThemedView>
+      <ThemedView style={styles.errorContainer}>
+        {hasError && (
+          <ThemedText type="subtitle" lightColor="#ff0000">
+            {data.error.message}
+          </ThemedText>
+        )}
+      </ThemedView>
     </ThemedView>
   );
 };

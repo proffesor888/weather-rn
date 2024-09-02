@@ -12,9 +12,10 @@ const getSearchResult = async (url: string, { arg }: { arg: string }) => {
 };
 
 export const useSearch = () => {
-  const { data, trigger } = useSWRMutation(BASE_URL, getSearchResult);
+  const { data, trigger, error } = useSWRMutation(BASE_URL, getSearchResult);
   return {
     data,
+    error,
     trigger,
   };
 };
