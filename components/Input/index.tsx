@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import {
   NativeSyntheticEvent,
   Pressable,
-  Text,
   TextInput,
   TextInputChangeEventData,
-  View,
 } from "react-native";
 import { styles } from "./styles";
 import { useSearch } from "@/hooks/useSearch";
@@ -15,8 +13,8 @@ import {
   eraseSearchResults,
   setError,
 } from "@/store/searchSlice";
-import { ThemedView } from "../ThemedView";
-import { ThemedText } from "../ThemedText";
+import { ThemedView } from "../common/ThemedView";
+import { ThemedText } from "../common/ThemedText";
 import { getSearchError } from "@/store/selectors";
 
 export const Input = () => {
@@ -30,7 +28,7 @@ export const Input = () => {
     if (data?.location && data?.current) {
       dispatch(setSearchResults(data));
     }
-    if(data?.error) {
+    if (data?.error) {
       dispatch(eraseSearchResults());
       dispatch(setError(data.error.message));
     }

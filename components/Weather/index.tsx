@@ -1,8 +1,8 @@
 import { getForecastForHours, getWeatherData } from "@/store/selectors";
 import { useSelector } from "react-redux";
-import { ThemedText } from "../ThemedText";
+import { ThemedText } from "../common/ThemedText";
 import { WeatherDetails } from "./WeatherDetails";
-import { ThemedView } from "../ThemedView";
+import { ThemedView } from "../common/ThemedView";
 
 const PRESELECTED_HOURS_AMOUNT = 5;
 
