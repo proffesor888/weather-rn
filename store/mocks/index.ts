@@ -1,46 +1,14 @@
-export const mockedForecast = {
+import { IForecast, RootState } from "../types";
+
+export const mockedForecast: IForecast = {
   forecastday: [
     {
       date: "2024-09-01",
       date_epoch: 1725148800,
-      day: {
-        maxtemp_c: 25.9,
-        maxtemp_f: 78.7,
-        mintemp_c: 16.5,
-        mintemp_f: 61.7,
-        avgtemp_c: 20.5,
-        avgtemp_f: 69.0,
-        maxwind_mph: 10.1,
-        maxwind_kph: 16.2,
-        totalprecip_mm: 3.43,
-        totalprecip_in: 0.14,
-        totalsnow_cm: 0.0,
-        avgvis_km: 9.9,
-        avgvis_miles: 6.0,
-        avghumidity: 81,
-        daily_will_it_rain: 1,
-        daily_chance_of_rain: 86,
-        daily_will_it_snow: 0,
-        daily_chance_of_snow: 0,
-        condition: {
-          text: "Patchy rain nearby",
-          icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
-          code: 1063,
-        },
-        uv: 5.0,
-      },
-      astro: {
-        sunrise: "06:13 AM",
-        sunset: "07:46 PM",
-        moonrise: "03:58 AM",
-        moonset: "07:36 PM",
-        moon_phase: "Waning Crescent",
-        moon_illumination: 4,
-        is_moon_up: 0,
-        is_sun_up: 0,
-      },
       hour: [
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725145200,
           time: "2024-09-01 00:00",
           temp_c: 16.9,
@@ -81,6 +49,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725148800,
           time: "2024-09-01 01:00",
           temp_c: 16.9,
@@ -121,6 +91,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725152400,
           time: "2024-09-01 02:00",
           temp_c: 16.8,
@@ -161,6 +133,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725156000,
           time: "2024-09-01 03:00",
           temp_c: 16.7,
@@ -201,6 +175,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725159600,
           time: "2024-09-01 04:00",
           temp_c: 16.6,
@@ -241,6 +217,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725163200,
           time: "2024-09-01 05:00",
           temp_c: 16.5,
@@ -281,6 +259,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725166800,
           time: "2024-09-01 06:00",
           temp_c: 16.7,
@@ -321,6 +301,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725170400,
           time: "2024-09-01 07:00",
           temp_c: 17.5,
@@ -361,6 +343,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725174000,
           time: "2024-09-01 08:00",
           temp_c: 18.9,
@@ -401,6 +385,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725177600,
           time: "2024-09-01 09:00",
           temp_c: 20.4,
@@ -441,6 +427,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725181200,
           time: "2024-09-01 10:00",
           temp_c: 22.0,
@@ -481,6 +469,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725184800,
           time: "2024-09-01 11:00",
           temp_c: 23.5,
@@ -521,6 +511,8 @@ export const mockedForecast = {
           uv: 6.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725188400,
           time: "2024-09-01 12:00",
           temp_c: 24.7,
@@ -561,6 +553,8 @@ export const mockedForecast = {
           uv: 6.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725192000,
           time: "2024-09-01 13:00",
           temp_c: 25.6,
@@ -601,6 +595,8 @@ export const mockedForecast = {
           uv: 7.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725195600,
           time: "2024-09-01 14:00",
           temp_c: 25.9,
@@ -641,6 +637,8 @@ export const mockedForecast = {
           uv: 7.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725199200,
           time: "2024-09-01 15:00",
           temp_c: 25.1,
@@ -681,6 +679,8 @@ export const mockedForecast = {
           uv: 6.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725202800,
           time: "2024-09-01 16:00",
           temp_c: 24.4,
@@ -721,6 +721,8 @@ export const mockedForecast = {
           uv: 6.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725206400,
           time: "2024-09-01 17:00",
           temp_c: 23.2,
@@ -761,6 +763,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725210000,
           time: "2024-09-01 18:00",
           temp_c: 22.1,
@@ -801,6 +805,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725213600,
           time: "2024-09-01 19:00",
           temp_c: 20.8,
@@ -841,6 +847,8 @@ export const mockedForecast = {
           uv: 6.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725217200,
           time: "2024-09-01 20:00",
           temp_c: 20.7,
@@ -881,6 +889,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725220800,
           time: "2024-09-01 21:00",
           temp_c: 20.5,
@@ -921,6 +931,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725224400,
           time: "2024-09-01 22:00",
           temp_c: 22.2,
@@ -961,6 +973,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725228000,
           time: "2024-09-01 23:00",
           temp_c: 20.2,
@@ -1005,44 +1019,12 @@ export const mockedForecast = {
     {
       date: "2024-09-02",
       date_epoch: 1725235200,
-      day: {
-        maxtemp_c: 23.1,
-        maxtemp_f: 73.6,
-        mintemp_c: 17.1,
-        mintemp_f: 62.8,
-        avgtemp_c: 19.1,
-        avgtemp_f: 66.4,
-        maxwind_mph: 12.8,
-        maxwind_kph: 20.5,
-        totalprecip_mm: 0.82,
-        totalprecip_in: 0.03,
-        totalsnow_cm: 0.0,
-        avgvis_km: 8.8,
-        avgvis_miles: 5.0,
-        avghumidity: 83,
-        daily_will_it_rain: 1,
-        daily_chance_of_rain: 88,
-        daily_will_it_snow: 0,
-        daily_chance_of_snow: 0,
-        condition: {
-          text: "Patchy rain nearby",
-          icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
-          code: 1063,
-        },
-        uv: 3.0,
-      },
-      astro: {
-        sunrise: "06:15 AM",
-        sunset: "07:44 PM",
-        moonrise: "05:13 AM",
-        moonset: "07:48 PM",
-        moon_phase: "New Moon",
-        moon_illumination: 1,
-        is_moon_up: 0,
-        is_sun_up: 0,
-      },
+      
+      
       hour: [
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725231600,
           time: "2024-09-02 00:00",
           temp_c: 19.9,
@@ -1083,6 +1065,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725235200,
           time: "2024-09-02 01:00",
           temp_c: 19.3,
@@ -1123,6 +1107,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725238800,
           time: "2024-09-02 02:00",
           temp_c: 18.9,
@@ -1163,6 +1149,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725242400,
           time: "2024-09-02 03:00",
           temp_c: 18.6,
@@ -1203,6 +1191,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725246000,
           time: "2024-09-02 04:00",
           temp_c: 18.3,
@@ -1243,6 +1233,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725249600,
           time: "2024-09-02 05:00",
           temp_c: 18.3,
@@ -1283,6 +1275,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725253200,
           time: "2024-09-02 06:00",
           temp_c: 18.5,
@@ -1323,6 +1317,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725256800,
           time: "2024-09-02 07:00",
           temp_c: 18.7,
@@ -1363,6 +1359,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725260400,
           time: "2024-09-02 08:00",
           temp_c: 19.1,
@@ -1403,6 +1401,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725264000,
           time: "2024-09-02 09:00",
           temp_c: 19.6,
@@ -1443,6 +1443,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725267600,
           time: "2024-09-02 10:00",
           temp_c: 20.2,
@@ -1483,6 +1485,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725271200,
           time: "2024-09-02 11:00",
           temp_c: 22.0,
@@ -1523,6 +1527,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725274800,
           time: "2024-09-02 12:00",
           temp_c: 23.1,
@@ -1563,6 +1569,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725278400,
           time: "2024-09-02 13:00",
           temp_c: 21.1,
@@ -1603,6 +1611,8 @@ export const mockedForecast = {
           uv: 5.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725282000,
           time: "2024-09-02 14:00",
           temp_c: 18.1,
@@ -1643,6 +1653,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725285600,
           time: "2024-09-02 15:00",
           temp_c: 18.1,
@@ -1683,6 +1695,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725289200,
           time: "2024-09-02 16:00",
           temp_c: 18.9,
@@ -1723,6 +1737,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725292800,
           time: "2024-09-02 17:00",
           temp_c: 19.0,
@@ -1763,6 +1779,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725296400,
           time: "2024-09-02 18:00",
           temp_c: 18.3,
@@ -1803,6 +1821,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725300000,
           time: "2024-09-02 19:00",
           temp_c: 18.3,
@@ -1843,6 +1863,8 @@ export const mockedForecast = {
           uv: 4.0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725303600,
           time: "2024-09-02 20:00",
           temp_c: 18.4,
@@ -1883,6 +1905,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725307200,
           time: "2024-09-02 21:00",
           temp_c: 18.5,
@@ -1923,6 +1947,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725310800,
           time: "2024-09-02 22:00",
           temp_c: 17.8,
@@ -1963,6 +1989,8 @@ export const mockedForecast = {
           uv: 0,
         },
         {
+          last_updated_epoch: 1725145200,
+          last_updated: "2024-09-01 00:00",
           time_epoch: 1725314400,
           time: "2024-09-02 23:00",
           temp_c: 17.1,
@@ -2005,4 +2033,44 @@ export const mockedForecast = {
       ],
     },
   ],
+};
+
+export const MOCKED_STORE: RootState = {
+  search: {
+    location: {
+      name: "London",
+      region: "City of London, Greater London",
+      country: "United Kingdom",
+      lat: 51.52,
+      lon: -0.11,
+      localtime_epoch: 1725225413,
+      localtime: "2024-09-01 22:16",
+    },
+    current: {
+      last_updated_epoch: 1725225300,
+      last_updated: "2024-09-01 22:15",
+      temp_c: 22.2,
+      temp_f: 72.0,
+      is_day: 0,
+      condition: {
+        text: "Clear",
+        icon: "//cdn.weatherapi.com/weather/64x64/night/113.png",
+        code: 1000,
+      },
+      wind_mph: 8.1,
+      wind_kph: 13.0,
+      wind_degree: 120,
+      wind_dir: "ESE",
+      pressure_mb: 1011.0,
+      pressure_in: 29.85,
+      humidity: 78,
+      cloud: 0,
+      feelslike_c: 24.6,
+      uv: 1.0,
+      time_epoch: 1725225300,
+      time: "2024-09-01 22:15",
+    },
+    forecast: { ...mockedForecast },
+    error: undefined,
+  },
 };

@@ -1,4 +1,4 @@
-import { getForecastForHours, getWeatherData } from "@/store/selectors";
+import { getForecastForHours, getSearchState } from "@/store/selectors";
 import { useSelector } from "react-redux";
 import { ThemedText } from "../common/ThemedText";
 import { WeatherDetails } from "./WeatherDetails";
@@ -6,7 +6,7 @@ import { ThemedView } from "../common/ThemedView";
 import { HIGHLIGHT_COLOR, PRESELECTED_HOURS_AMOUNT } from "@/constants";
 
 export const Weather = () => {
-  const { current, location } = useSelector(getWeatherData);
+  const { current, location } = useSelector(getSearchState);
   const forecast = useSelector((state) =>
     getForecastForHours(state, PRESELECTED_HOURS_AMOUNT)
   );

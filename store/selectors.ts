@@ -3,10 +3,6 @@ import { RootState } from "./types";
 import { getForecaseForSelectedDays } from "./utils";
 
 export const getSearchState = (state: RootState) => state.search;
-export const getWeatherData = createSelector(
-  [getSearchState],
-  (searchState) => searchState
-);
 export const getSearchError = createSelector(getSearchState, (state) => {
   return state.error;
 })

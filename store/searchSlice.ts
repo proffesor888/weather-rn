@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ICurrent, ILocation, SearchState } from "./types";
 
-const initialSearchState: SearchState = {
+export const initialSearchState: SearchState = {
   location: undefined,
   current: undefined,
   forecast: undefined,
@@ -38,4 +38,4 @@ export const searchSlice = createSlice({
 
 export const { setSearchResults, eraseSearchResults, setError } = searchSlice.actions;
 
-export default searchSlice.reducer;
+export const searchReducer = searchSlice.reducer;

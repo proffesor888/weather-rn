@@ -9,7 +9,7 @@ export interface ILocation {
 }
 
 export interface ICurrent {
-  last_updated_epoch: string;
+  last_updated_epoch: number;
   last_updated: string;
   time: string;
   temp_c: number;
@@ -31,6 +31,24 @@ export interface ICurrent {
   feelslike_c: number;
   uv: number;
   time_epoch: number;
+  precip_mm?: number;
+  precip_in?: number;
+  snow_cm?: number;
+  feelslike_f?: number;
+  windchill_c?: number;
+  windchill_f?: number;
+  heatindex_c?: number;
+  heatindex_f?: number;
+  dewpoint_c?: number;
+  dewpoint_f?: number;
+  will_it_rain?: number;
+  chance_of_rain?: number;
+  will_it_snow?: number;
+  chance_of_snow?: number;
+  vis_km?: number;
+  vis_miles?: number;
+  gust_mph?: number;
+  gust_kph?: number;
 }
 
 export interface IForecast {
