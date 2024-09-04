@@ -11,7 +11,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "react-native";
 import { SWRConfig } from "swr";
-import { store } from "@/store";
+import { setupStore } from "@/store";
 import { Provider } from "react-redux";
 
 SplashScreen.preventAutoHideAsync();
@@ -21,6 +21,7 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
+  const store = setupStore();
 
   useEffect(() => {
     if (loaded) {
