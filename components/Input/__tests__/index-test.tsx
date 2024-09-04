@@ -1,8 +1,7 @@
 import React from "react";
 import { Input } from "../index";
 import { renderWithRedux } from "@/utils/testUtil";
-import * as SearchHook from "@/hooks/useSearch";
-import { fireEvent, screen } from "@testing-library/react-native";
+import { fireEvent } from "@testing-library/react-native";
 
 describe("<Input />", () => {
   test("renders input", () => {
@@ -16,7 +15,7 @@ describe("<Input />", () => {
     getByDisplayValue("Test text");
   });
   test("data removed by search erase click", () => {
-    const { getByTestId, getByDisplayValue } = renderWithRedux(<Input />);
+    const { getByTestId } = renderWithRedux(<Input />);
     const el = getByTestId("search-input");
     const clearEl = getByTestId("search-clear");
     fireEvent(el, "onChangeText", "Test text");
