@@ -13,6 +13,16 @@
   "jest": {
     "preset": "jest-expo",
     "collectCoverage": true,
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    },
+    "testEnvironment": "jsdom",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-redux|@react-native|expo-modules-core|expo|react-native|expo-font|@expo|expo-asset|expo-constants)/)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ],
     "collectCoverageFrom": [
       "**/*.{ts,tsx,js,jsx}",
       "!**/coverage/**",
@@ -47,12 +57,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react": "^16.0.1",
     "@testing-library/react-native": "^12.6.1",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.45",
     "@types/react-test-renderer": "^18.0.7",
     "jest-expo": "~51.0.3",
     "react-test-renderer": "18.2.0",
+    "redux-mock-store": "^1.5.4",
     "typescript": "~5.3.3"
   },
   "private": true

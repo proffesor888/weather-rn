@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
 import {
   NativeSyntheticEvent,
   Pressable,
   TextInput,
   TextInputChangeEventData,
 } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { styles } from "./styles";
 import { useSearch } from "@/hooks/useSearch";
-import { useDispatch, useSelector } from "react-redux";
 import {
   setSearchResults,
   eraseSearchResults,
@@ -17,6 +16,7 @@ import { ThemedView } from "../common/ThemedView";
 import { ThemedText } from "../common/ThemedText";
 import { getSearchError } from "@/store/selectors";
 import { ERROR_COLOR, MAIN_LIGHT_COLOR } from "@/constants";
+import { useEffect, useState } from "react";
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -36,9 +36,9 @@ export const Input = () => {
   }, [data]);
 
   const handleOnChange = (
-    e: NativeSyntheticEvent<TextInputChangeEventData>
+    text: string
   ) => {
-    setInputValue(e.nativeEvent.text);
+    setInputValue(text);
   };
   const onSearch = () => {
     trigger(inputValue);
@@ -51,9 +51,10 @@ export const Input = () => {
     <ThemedView>
       <TextInput
         value={inputValue}
-        onChange={handleOnChange}
+        onChangeText={handleOnChange}
         placeholder="Please, enter city name"
         style={styles.input}
+        testID="search-input"
       />
       <ThemedView style={styles.buttonsContainer}>
         <Pressable style={styles.button} onPress={onSearch}>
@@ -61,7 +62,7 @@ export const Input = () => {
             Search
           </ThemedText>
         </Pressable>
-        <Pressable style={styles.button} onPress={onClear}>
+        <Pressable testID="search-clear" style={styles.button} onPress={onClear}>
           <ThemedText lightColor={MAIN_LIGHT_COLOR} type="subtitle">
             Clear search
           </ThemedText>
@@ -69,7 +70,11 @@ export const Input = () => {
       </ThemedView>
       <ThemedView style={styles.errorContainer}>
         {hasError && (
-          <ThemedText type="subtitle" lightColor={ERROR_COLOR}>
+          <ThemedText
+            testID="search-error"
+            type="subtitle"
+            lightColor={ERROR_COLOR}
+          >
             {data.error.message}
           </ThemedText>
         )}

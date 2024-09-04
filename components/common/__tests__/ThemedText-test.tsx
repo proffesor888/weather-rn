@@ -1,3 +1,4 @@
+import React from "react";
 import { render } from "@testing-library/react-native";
 import { ThemedText } from "../ThemedText";
 
@@ -8,7 +9,7 @@ jest.mock("@/hooks/useThemeColor", () => ({
 
 describe("<ThemedText />", () => {
   test("renders a component", () => {
-    const { getByTestId } = render(ThemedText({ children: "text" }));
+    const { getByTestId } = render(<ThemedText>{"text"}</ThemedText>);
     getByTestId("themed-text");
   });
 });
