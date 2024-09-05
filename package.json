@@ -30,6 +30,9 @@
       "!**/babel.config.js",
       "!**/expo-env.d.ts",
       "!**/.expo/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/app"
     ]
   },
   "dependencies": {
