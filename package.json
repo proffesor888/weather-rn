@@ -18,7 +18,7 @@
     },
     "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-redux|@react-native|expo-modules-core|expo|react-native|expo-font|@expo|expo-asset|expo-constants|react-native-reanimated)/)"
+      "node_modules/(?!(react-redux|@react-native|expo-status-bar|expo-modules-core|expo|react-native|expo-font|@expo|expo-asset|expo-constants|react-native-reanimated|expo-router|@react-navigation|expo-splash-screen|expo-linking)/)"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/jest-setup.js"
